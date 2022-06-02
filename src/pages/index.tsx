@@ -12,6 +12,12 @@ const IndexPage = () => (
     </h1>
 
     <ul>
+    <li>
+        <a target="_blank" href="https://boredom-shop.fr/">
+          Boredom
+        </a>
+        <span className="small"> - online shop for a French clothing brand</span>
+      </li>
       <li>
         <a target="_blank" href="https://kiaora.builtbynlb.com/">
           Kia Ora
@@ -19,7 +25,7 @@ const IndexPage = () => (
         <span className="small"> - apartment rental platform (React, GraphQL)</span>
       </li>
       <li>
-        <a target="_blank" href="https://ncov.builtbynlb.com/">
+        <a target="_blank" href="https://nleborgne.github.io/nCov/">
           nCov
         </a>
         <span className="small"> - Covid-19 dashboard (Vue)</span>
