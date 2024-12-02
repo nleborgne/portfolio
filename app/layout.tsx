@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ViewTransitions } from "next-view-transitions";
 import { geistSans } from "~/mdx-components";
-import Footer from "./components/Footer";
+import Footer from "./components/footer";
 
 export const metadata: Metadata = {
   title: "Nicolas Le Borgne",
