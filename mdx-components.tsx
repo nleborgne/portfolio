@@ -1,33 +1,39 @@
-import React, { ComponentPropsWithoutRef } from 'react';
-import { Link } from 'next-view-transitions';
-import { highlight } from 'sugar-high';
-import localFont from 'next/font/local';
+import React, { ComponentPropsWithoutRef } from "react";
+import { Link } from "next-view-transitions";
+import { highlight } from "sugar-high";
+import localFont from "next/font/local";
 
-type HeadingProps = ComponentPropsWithoutRef<'h1'>;
-type ParagraphProps = ComponentPropsWithoutRef<'p'>;
-type ListProps = ComponentPropsWithoutRef<'ul'>;
-type ListItemProps = ComponentPropsWithoutRef<'li'>;
-type AnchorProps = ComponentPropsWithoutRef<'a'>;
-type BlockquoteProps = ComponentPropsWithoutRef<'blockquote'>;
+type HeadingProps = ComponentPropsWithoutRef<"h1">;
+type ParagraphProps = ComponentPropsWithoutRef<"p">;
+type ListProps = ComponentPropsWithoutRef<"ul">;
+type ListItemProps = ComponentPropsWithoutRef<"li">;
+type AnchorProps = ComponentPropsWithoutRef<"a">;
+type BlockquoteProps = ComponentPropsWithoutRef<"blockquote">;
 
 export const geistSans = localFont({
-    src: "./app/fonts/GeistVF.woff",
-    variable: "--font-geist-sans",
-    weight: "100 900",
-  });
+  src: "./app/fonts/GeistVF.woff",
+  variable: "--font-geist-sans",
+  weight: "100 900",
+});
 
-  export const geistMono = localFont({
-    src: "./app/fonts/GeistMonoVF.woff",
-    variable: "--font-geist-mono",
-    weight: "100 900",
-  });
+export const geistMono = localFont({
+  src: "./app/fonts/GeistMonoVF.woff",
+  variable: "--font-geist-mono",
+  weight: "100 900",
+});
 
 const components = {
   h1: (props: HeadingProps) => (
-    <h1 className={`font-medium pt-12 mb-0 fade-in ${geistMono.className}`} {...props} />
+    <h1
+      className={`font-medium pt-12 mb-0 fade-in ${geistMono.className}`}
+      {...props}
+    />
   ),
   h2: (props: HeadingProps) => (
-    <h2 className={`text-gray-800 font-medium mt-8 mb-3 ${geistMono.className}`} {...props} />
+    <h2
+      className={`text-gray-800 font-medium mt-8 mb-3 ${geistMono.className}`}
+      {...props}
+    />
   ),
   h3: (props: HeadingProps) => (
     <h3 className="text-gray-800 font-medium mt-8 mb-3" {...props} />
@@ -43,22 +49,22 @@ const components = {
     <ul className="text-gray-800 list-disc pl-5 space-y-1" {...props} />
   ),
   li: (props: ListItemProps) => <li className="pl-1" {...props} />,
-  em: (props: ComponentPropsWithoutRef<'em'>) => (
+  em: (props: ComponentPropsWithoutRef<"em">) => (
     <em className="font-medium" {...props} />
   ),
-  strong: (props: ComponentPropsWithoutRef<'strong'>) => (
+  strong: (props: ComponentPropsWithoutRef<"strong">) => (
     <strong className="font-medium" {...props} />
   ),
   a: ({ href, children, ...props }: AnchorProps) => {
-    const className = 'text-blue-500 hover:text-blue-700';
-    if (href?.startsWith('/')) {
+    const className = "text-blue-700 hover:text-blue-900";
+    if (href?.startsWith("/")) {
       return (
         <Link href={href} className={className} {...props}>
           {children}
         </Link>
       );
     }
-    if (href?.startsWith('#')) {
+    if (href?.startsWith("#")) {
       return (
         <a href={href} className={className} {...props}>
           {children}
@@ -77,7 +83,7 @@ const components = {
       </a>
     );
   },
-  code: ({ children, ...props }: ComponentPropsWithoutRef<'code'>) => {
+  code: ({ children, ...props }: ComponentPropsWithoutRef<"code">) => {
     const codeHTML = highlight(children as string);
     return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
   },
