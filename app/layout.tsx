@@ -5,8 +5,15 @@ import { geistSans } from "~/mdx-components";
 import Footer from "./components/footer";
 
 export const metadata: Metadata = {
-  title: "Nicolas Le Borgne",
-  description: "My personal portfolio",
+  metadataBase: new URL("https://builtbynlb.com"),
+  alternates: {
+    canonical: "/",
+  },
+  title: {
+    default: "Nicolas Le Borgne",
+    template: "%s | Nicolas Le Borgne",
+  },
+  description: "freelance frontend developer.",
 };
 
 export default function RootLayout({
@@ -17,9 +24,9 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html lang="en" className={`${geistSans.className}`}>
-        <body className="antialiased tracking-tight">
-          <div className="min-h-screen flex flex-col justify-between pt-0 md:pt-8 p-8 bg-white text-gray-900">
-            <main className="max-w-[60ch] mx-auto w-full space-y-6">
+        <body className="tracking-tight antialiased">
+          <div className="flex min-h-screen flex-col justify-between bg-white p-8 pt-0 text-gray-900 md:pt-8">
+            <main className="mx-auto w-full max-w-[60ch] space-y-6">
               {children}
             </main>
             <Footer />
