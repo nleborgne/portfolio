@@ -40,14 +40,14 @@
 }
 
 .transition-element {
-  view-transition-name: lee;
+  view-transition-name: nlb;
 }
 
-::view-transition-old(lee) {
+::view-transition-old(nlb) {
   animation: fade-out 0.8s ease-in-out;
 }
 
-::view-transition-new(lee) {
+::view-transition-new(nlb) {
   animation: fade-in-up 0.4s ease-in-out;
 }
 

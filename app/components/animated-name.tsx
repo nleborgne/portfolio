@@ -2,7 +2,7 @@ import { Link } from "next-view-transitions";
 
 export function AnimatedName() {
   return (
-    <Link href="/" className="flex mb-8 font-medium text-gray-400 fade-in">
+    <Link href="/" className="fade-in mb-8 flex font-medium text-gray-400">
       Nicolas Le Borgne
     </Link>
   );
