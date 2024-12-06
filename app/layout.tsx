@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     default: "Nicolas Le Borgne",
     template: "%s | Nicolas Le Borgne",
   },
-  description: "freelance frontend developer.",
+  description: "freelance web developer.",
 };
 
 export default function RootLayout({
