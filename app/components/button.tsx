@@ -8,8 +8,8 @@ export function Button({
 }: ComponentPropsWithoutRef<"a">) {
   return (
     <Link href={encodeURI(href ?? "/")} {...props}>
-      <button className="transition-background-color cursor-pointer rounded rounded-lg bg-gray-300 px-4 py-2 text-sm font-medium text-gray-900 transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-gray-500">
-        {children}
+      <button className="relative flex cursor-pointer items-center justify-center overflow-hidden rounded-md bg-gray-800 px-3 py-2 text-white transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-gray-700 before:duration-300 before:ease-out hover:before:h-56 hover:before:w-56">
+        <span className="relative z-10">{children}</span>
       </button>
     </Link>
   );
